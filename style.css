@@ -1,0 +1,74 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: #f8cb9c;
+  font-family: 'Indie Flower', cursive;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#cats {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 90%;
+  width: 100%;
+}
+
+.catBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 95%;
+  width: 45%;
+  border: 7px double;
+  margin: 1.25vw;
+}
+
+.playerLabel {
+  font-size: 1.8vw;
+}
+
+.popcat {
+  border-radius: 50%;
+  border: 3px solid #ffecec;
+  width: 20vw;
+  height: 20vw;
+  object-fit: cover;
+}
+
+.countBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.countLabel {
+  margin-bottom: 1vh;
+  margin-top: 2vh;
+  font-size: 3vw;
+}
+
+.countN {
+  margin-top: -3vh;
+  font-size: 2.5vw;
+}
+
+#how {
+  font-size: 1.8vw;
+  margin: 0%;
+  padding-left: 1.5vw;
+}
+
+#container {
+  height: 95%;
+  width: 100%;
+}
