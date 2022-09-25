@@ -5,10 +5,10 @@ var b = 0;
 var scoreOne = document.getElementsByClassName('countN')[0];
 var scoreTwo = document.getElementsByClassName('countN')[1];
 
-console.log(popcatOne)
-console.log(popcatOne.src)
-console.log(a)
-console.log(scoreOne.text)
+// console.log(popcatOne)
+// console.log(popcatOne.src)
+// console.log(a)
+// console.log(scoreOne.text)
 
 popcatOne.addEventListener('click', popA);
 popcatTwo.addEventListener('click', popB);
@@ -20,11 +20,9 @@ function playSound() {
 };
 
 document.addEventListener('keypress', function(event) {
-  if (event.keyCode === 87) {
-    console.log("gi")
-    alert("press");
+  if (event.code === "KeyA") {
     popA();
-  } else if (event.keyCode === 32) {
+  } else if (event.code === "KeyL") {
     popB();
   }
 });
