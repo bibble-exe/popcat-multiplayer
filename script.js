@@ -1,9 +1,15 @@
 var popcatOne = document.getElementsByClassName('popcat')[0];
 var popcatTwo = document.getElementsByClassName('popcat')[1];
-var a = 0;
-var b = 0;
+var a = 50;
+var b = 50;
 var scoreOne = document.getElementsByClassName('countN')[0];
 var scoreTwo = document.getElementsByClassName('countN')[1];
+
+var progBar = document.getElementsByClassName('progress')[0];
+var progFillOne = document.getElementsByClassName('progFillOne');
+var progFillTwo = document.getElementsByClassName('progFillTwo');
+
+
 
 // console.log(popcatOne)
 // console.log(popcatOne.src)
@@ -38,7 +44,17 @@ function popsA() {
   openA();
   setTimeout(closeA, 300);
   a = a+1;
+  b = b-1;
   scoreOne.textContent = a;
+  scoreTwo.textContent = b;
+  updateProgBar(progBar, a, "progFillOne", "progTxtOne");
+  updateProgBar(progBar, b, "progFillTwo", "progTxtTwo");
+  console.log(a,b)
+  if (a === 100) {
+    alert("Player One Wins!")
+  } else if (b === 100) {
+    alert("Player Two Wins!")
+  };
 }
 
 function openA() {
@@ -72,7 +88,11 @@ function popsB() {
   openB();
   setTimeout(closeB, 300);
   b = b+1;
+  a = a-1;
+  scoreOne.textContent = a;
   scoreTwo.textContent = b;
+  updateProgBar(progBar, a, "progFillOne", "progTxtOne");
+  updateProgBar(progBar, b, "progFillTwo", "progTxtTwo");
 }
 
 function openB() {
@@ -93,4 +113,15 @@ function enlargeImgB() {
 function resetImgB() {
   popcatTwo.style.transform = "scale(1)";
   popcatTwo.style.transition = "transform 0.1s ease";
+}
+
+// score
+
+function updateProgBar(progBar, value, classFill, classTxt) {
+  value = Math.round(value);
+  classFill = "." + classFill;
+  classTxt = "." + classTxt;
+  progBar.querySelector(classFill).style.height = `${value}%`;
+  console.log(progBar.querySelector(classFill).style.height);
+  // progBar.querySelector(classTxt).textContent = `${value}%`;
 }

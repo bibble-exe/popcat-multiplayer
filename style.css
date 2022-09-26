@@ -3,7 +3,7 @@ html, body {
   width: 100%;
   background-color: #f8cb9c;
   font-family: 'Indie Flower', cursive;
-  overflow: hidden;
+/*   overflow: hidden; */
 }
 
 body {
@@ -72,3 +72,45 @@ body {
   height: 95%;
   width: 100%;
 }
+
+.progress {
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  border: 7px double;
+  height: 95%;
+  width: 5%;
+  margin: 1.25vw;
+}
+
+.progFillOne {
+  width: 100%;
+  height: 50%;
+  background-color: pink;
+  transition: all 0.1s;
+}
+
+/* .progTxtOne {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+}  */
+
+.progFillTwo {
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  bottom: 0px;
+  background-color: lightblue;
+  border-top: 3px solid black;
+  transition: all 0.1s;
+}
+
+/* .progTxtTwo {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+} */
+
