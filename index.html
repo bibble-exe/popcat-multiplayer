@@ -16,9 +16,11 @@
 
   <div id="container">
 
-    <p id="how">click on [ POPCAT ] to pop, or press [ A ] for Player One and [ L ] for Player Two!</p>
+    <p id="how">click on <span style="font-weight: bold;">[ POPCAT ]</span> to pop, or press <span style="font-weight: bold;">[ A ]</span> for Player One and <span style="font-weight: bold;">[ L ]</span> for Player Two!</p>
   
     <div id="cats">
+
+<!--       PLAYER ONE CONTAINER -->
       
       <div class="catBox">
   
@@ -28,20 +30,21 @@
         
         <div class="countBox">
           <p class="countLabel">--- score ---</p>
-          <p class="countN">0</p>
+          <p class="countN">50</p>
         </div>
         
       </div>
 
+<!--       SCORE BAR CONTAINER -->
+      
       <div class="progress">
       
-      <div class="progFillTwo"></div>
-<!--       <span class="progTxtTwo">50%</span> -->
-
-      <div class="progFillOne"></div>
-<!--       <span class="progTxtOne">50%</span> -->
+        <div class="progFillTwo"></div>
+        <div class="progFillOne"></div>
       
-    </div>
+      </div>
+
+<!--       PLAYER TWO CONTAINER -->
     
       <div class="catBox">
   
@@ -51,11 +54,31 @@
         
         <div class="countBox">
           <p class="countLabel">--- score ---</p>
-          <p class="countN">0</p>
+          <p class="countN">50</p>
         </div>
         
       </div>
       
+    </div>
+
+<!--     MODAL  -->
+    
+    <div id="modalOne" class="modal">
+
+      <div class="modal-content" id="modalBoxOne">
+        <span class="close">&times;</span>
+        <p>Player One Wins! The Game will now reset.</p>
+      </div>
+
+    </div>
+
+    <div id="modalTwo" class="modal">
+
+      <div class="modal-content" id="modalBoxTwo">
+        <span class="close">&times;</span>
+        <p>Player Two Wins! The Game will now reset.</p>
+      </div>
+
     </div>
     
   </div>

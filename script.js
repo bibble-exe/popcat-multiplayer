@@ -9,12 +9,10 @@ var progBar = document.getElementsByClassName('progress')[0];
 var progFillOne = document.getElementsByClassName('progFillOne');
 var progFillTwo = document.getElementsByClassName('progFillTwo');
 
-
-
-// console.log(popcatOne)
-// console.log(popcatOne.src)
-// console.log(a)
-// console.log(scoreOne.text)
+var modalOne = document.getElementById("modalOne");
+var modalTwo = document.getElementById("modalTwo");
+var spanOne = document.getElementsByClassName("close")[0];
+var spanTwo = document.getElementsByClassName("close")[1];
 
 popcatOne.addEventListener('click', popA);
 popcatTwo.addEventListener('click', popB);
@@ -49,12 +47,7 @@ function popsA() {
   scoreTwo.textContent = b;
   updateProgBar(progBar, a, "progFillOne", "progTxtOne");
   updateProgBar(progBar, b, "progFillTwo", "progTxtTwo");
-  console.log(a,b)
-  if (a === 100) {
-    alert("Player One Wins!")
-  } else if (b === 100) {
-    alert("Player Two Wins!")
-  };
+  checkWinner();
 }
 
 function openA() {
@@ -93,6 +86,7 @@ function popsB() {
   scoreTwo.textContent = b;
   updateProgBar(progBar, a, "progFillOne", "progTxtOne");
   updateProgBar(progBar, b, "progFillTwo", "progTxtTwo");
+  checkWinner();
 }
 
 function openB() {
@@ -123,5 +117,49 @@ function updateProgBar(progBar, value, classFill, classTxt) {
   classTxt = "." + classTxt;
   progBar.querySelector(classFill).style.height = `${value}%`;
   console.log(progBar.querySelector(classFill).style.height);
-  // progBar.querySelector(classTxt).textContent = `${value}%`;
+}
+
+function checkWinner() {
+  console.log(a,b)
+  if (a === 100) {
+    openModal(modalOne);
+    resetScore(); 
+  } else if (b === 100) {
+    openModal(modalTwo);
+    resetScore();
+  };
+}
+
+// open modal
+
+function openModal(modal) {
+  modal.style.display = "flex";
+}
+
+spanOne.onclick = function() {
+  modalOne.style.display = "none";
+}
+
+spanTwo.onclick = function() {
+  modalTwo.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modalOne) {
+    modalOne.style.display = "none";
+  } else if (event.target == modalTwo) {
+    modalTwo.style.display = "none";
+  }
+}
+
+// reset
+
+function resetScore() {
+  a = 50;
+  b = 50;
+  scoreOne.textContent = a;
+  scoreTwo.textContent = b;
+  updateProgBar(progBar, a, "progFillOne", "progTxtOne");
+  updateProgBar(progBar, b, "progFillTwo", "progTxtTwo");
+  console.log("reset");
 }
